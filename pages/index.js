@@ -1,10 +1,16 @@
-function Home() {
-    return (
-      <div>
-        <h1>Hello, Next.js!</h1>
-        <p>Welcome to your first Next.js app.</p>
-      </div>
-    )
-  }
-  
-  export default Home
+import Layout from '../components/layout'
+import NestedLayout from '../components/nested-layout'
+ 
+export default function Page() {
+  return (
+    <h1>Hello</h1>
+  )
+}
+ 
+Page.getLayout = function getLayout(page) {
+  return (
+    <Layout>
+      <NestedLayout>{page}</NestedLayout>
+    </Layout>
+  )
+}
